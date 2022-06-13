@@ -2,8 +2,8 @@ from datetime import date
 
 class Filme:
 
-    def __init__(self, codigo_filme: int, titulo: str):
-        self._codigofilme = codigo_filme
+    def __init__(self, codigo: int, titulo: str):
+        self._codigo = codigo
         self._titulo = titulo
         self._genero = list()
         self._data_lancamento = date.today() 
@@ -15,10 +15,10 @@ class Filme:
         self._numero_copias = int()
 
     def get_codigo(self):
-        return self._codigofilme
+        return self._codigo
 
-    def set_codigo(self, codigo_filme):
-        self._codigofilme = codigo_filme
+    def set_codigo(self, codigo):
+        self._codigo = codigo
 
     def get_titulo(self):
         return self._titulo
@@ -74,5 +74,7 @@ class Filme:
     def set_numerocopias(self, numero_copias):
         self._numero_copias = numero_copias
 
-    def imprimirfilme(self):
-        return print("Titulo: {} | Código: {} | Gê nero: {} | Data de lançamento: {} | Diretor: {} | Atores: {} | Sinopse: {}  ". format(self._titulo, self._codigofilme, self._genero, self._data_lancamento, self._data_lancamento, self._diretor, self._atores, self._sinopse))
+    def imprimir(self):
+        return print("Titulo: {} | Código: {} | Gênero: {} | Data de lançamento: {} | Diretor: {} | Atores: {} | Sinopse: {}  ". format(self._titulo, self._codigo, self._genero, self._data_lancamento, self._data_lancamento, self._diretor, self._atores, self._sinopse))
+
+

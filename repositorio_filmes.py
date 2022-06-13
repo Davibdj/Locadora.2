@@ -1,9 +1,11 @@
+from filme import Filme
+
 class Repositorio_Filme:
 
     def __init__(self):
         self.filmes = []
 
-    def cadastrar(self, filme):
+    def cadastrar(self, filme: Filme):
         self.filmes.append(filme)
 
     def buscar(self, codigo):

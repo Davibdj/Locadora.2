@@ -1,9 +1,9 @@
-from Operação.operacao import Operacao
+from operacao import Operacao
 
-class Repositorio_Operacoes(Operacao):
+class Repositorio_Operacoes():
 
     def __init__(self):
-        pass
+        self.operacao = []
 
     def cadastrar(self, operacao: Operacao):
         pass

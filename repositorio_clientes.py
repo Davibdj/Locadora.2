@@ -1,7 +1,6 @@
-from Cliente.cliente import Cliente
+from cliente import Cliente
 
-
-class Repositorio_Cliente(Cliente):
+class Repositorio_Cliente:
 
     def __init__(self):
         self.clientes = []

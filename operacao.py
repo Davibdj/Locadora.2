@@ -2,17 +2,17 @@ from datetime import date
 
 class Operacao:
 
-    def __init__(self, cpf, codigo_operacao):
-        self._codigo_operacao = codigo_operacao
+    def __init__(self, cpf: str, codigo: int):
+        self._codigo = codigo
         self._cpf = cpf
-        self._dataoperacao = date
+        self._dataoperacao = date.today()
         self._ativo = bool()
 
-    def get_codigo_operacao(self):
-        return self._codigo_operacao
+    def get_codigo(self):
+        return self._codigo
 
-    def set_codigo_operacao(self, codigo_operacao):
-        self._codigo_operacao = codigo_operacao
+    def set_codigo(self, codigo):
+        self._codigo = codigo
 
     def get_cpf(self):
         return self._cpf
@@ -26,10 +26,5 @@ class Operacao:
     def set_dataoperacao(self, dataoperacao):
         self._dataoperacao = dataoperacao
 
-    def get_ativo(self):
+    def isAtivo(self):
         return self._ativo
-
-    def set_ativo(self, ativo):
-        self._ativo = ativo
-
-
