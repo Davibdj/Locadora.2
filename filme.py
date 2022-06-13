@@ -6,7 +6,7 @@ class Filme:
         self._codigofilme = codigo_filme
         self._titulo = titulo
         self._genero = list()
-        self._data_lancamento = date
+        self._data_lancamento = date.today() 
         self._diretor = str
         self._atores = list()
         self._sinopse = str
