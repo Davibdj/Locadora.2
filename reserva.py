@@ -1,5 +1,6 @@
 from operacao import Operacao
 
+
 class Reserva(Operacao):
 
     def __init__(self, prioridade: int):
