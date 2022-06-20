@@ -5,8 +5,10 @@ class Repositorio_Filme:
     def __init__(self):
         self.filmes = []
 
+
     def cadastrar(self, filme: Filme):
         self.filmes.append(filme)
+
 
     def buscar(self, codigo):
         for filme in self.filmes:
