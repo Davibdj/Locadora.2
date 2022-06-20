@@ -1,5 +1,5 @@
 
-from filme import Filme
+from Filmes.filme import Filme
 
 class criarfilme:
 
