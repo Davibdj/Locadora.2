@@ -28,7 +28,13 @@ class RepositorioCliente:
         else:
             print("Cliente inexistente!")
 
+    def deletar(self, cpf: str):
+        pass
 
     def listar(self):
-        return print(' '. join(self.clientes))
+        if self.clientes == []:
+            print("Repositorio Vazio!")
+        else:
+            print(''. join(self.clientes))
+
 

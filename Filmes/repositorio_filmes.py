@@ -1,13 +1,17 @@
 from Filmes.filme import Filme
 
-class Repositorio_Filme:
+class RepositorioFilme:
 
     def __init__(self):
         self.filmes = []
 
 
     def cadastrar(self, filme: Filme):
-        self.filmes.append(filme)
+        if self.buscar(filme.get_codigo()) is None:
+            self.filmes.append(filme)
+            print("Filme cadastrado com sucesso!")
+        else:
+            print("Filme já cadastrado.")
 
 
     def buscar(self, codigo):
