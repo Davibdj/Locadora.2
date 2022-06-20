@@ -7,7 +7,11 @@ class RepositorioCliente:
         self.clientes = []
 
     def cadastrar(self, cliente: Cliente):
-        self.clientes.append(cliente)
+        if self.buscar(cliente.get_cpf()) is None:
+            self.clientes.append(cliente)
+            print("Cadastro Realizado com sucesso!")
+        else:
+            print("Cliente já cadastrado.")
 
     def buscar(self, cpf):
         for cliente in self.clientes:
@@ -26,5 +30,4 @@ class RepositorioCliente:
 
 
     def listar(self):
-        pass
-
+        return print(' '. join(self.clientes))
