@@ -1,4 +1,4 @@
-from cliente import Cliente
+from clientej import Cliente
 
 
 class RepositorioCliente:
