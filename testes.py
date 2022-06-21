@@ -1,10 +1,9 @@
-from Cliente.repositorio_clientes import RepositorioCliente
+from repositorios.repositorio_clientes import RepositorioCliente
 from Filmes.filme import Filme
 from Cliente.cliente import Cliente
-from Filmes.repositorio_filmes import RepositorioFilme
-from Operacao.operacao import Operacao
+from repositorios.repositorio_filmes import RepositorioFilme
 
-
+'''
 class Criarfilme:
     if __name__ == '__main__':
         filme = Filme(658, "Call me by Your Name")
@@ -21,7 +20,7 @@ class criarCliente:
         cliente.set_endereco(["Travessa Jurandir Bastos, nº56"])
         cliente.imprimircliente()
 
-
+'''
 class TesteRepoCliente:
     if __name__ == '__main__':
         cliente = Cliente('06898569856')
@@ -32,8 +31,9 @@ class TesteRepoCliente:
         repoCliente = RepositorioCliente()
         repoCliente.cadastrar(cliente)
         repoCliente.cadastrar(cliente_1)
+        #repoCliente.buscar('06898569856')
 
-
+'''
 class TesteRepoFilmes:
 
     if __name__ == '__main__':
@@ -45,7 +45,7 @@ class TesteRepoFilmes:
 
         repoFilme = RepositorioFilme()
         repoFilme.cadastrar(filme)
-
+'''
 
 
 
