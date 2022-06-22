@@ -23,7 +23,7 @@ class RepositorioCliente:
     def atualizar(self, cliente: Cliente):
         cliente = self.buscar(cliente.get_cpf())
         if cliente is not None:
-            cliente.set_nome(cliente.get_name())
+            cliente.set_nome(cliente.get_nome())
             cliente.set_endereco(cliente.get_endereco())
         else:
             print("Cliente inexistente!")
@@ -32,9 +32,5 @@ class RepositorioCliente:
         pass
 
     def listar(self):
-        if self.clientes == []:
-            print("Repositorio Vazio!")
-        else:
-            print(''. join(self.clientes))
-
+        return self.clientes
 

@@ -31,7 +31,20 @@ class TesteRepoCliente:
         repoCliente = RepositorioCliente()
         repoCliente.cadastrar(cliente)
         repoCliente.cadastrar(cliente_1)
-        #repoCliente.buscar('06898569856')
+
+        cliente.imprimircliente()
+
+        cliente.set_nome(["Wanderson"])
+        repoCliente.atualizar(cliente)
+
+        for cl in repoCliente.listar():
+            cl.imprimircliente()
+
+        cliente.set_endereco(["Monte castelo"])
+        repoCliente.atualizar(cliente)
+
+        for c in repoCliente.listar():
+            c.imprimircliente()
 
 '''
 class TesteRepoFilmes:
