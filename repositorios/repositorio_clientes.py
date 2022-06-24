@@ -29,7 +29,12 @@ class RepositorioCliente:
             print("Cliente inexistente!")
 
     def deletar(self, cpf: str):
-        pass
+                for cliente in self.clientes:
+            if filme.get_cpf() == cpf:
+                self.clientes.pop(self.clientes.index())
+                print("Cliente deletado com sucesso!")
+            else:
+                print("Cliente não encontrado!")
 
     def listar(self):
         return self.clientes #Retorna a lista clientes
