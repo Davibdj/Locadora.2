@@ -1,4 +1,7 @@
+from Operacao import operacao
 from Operacao.operacao import Operacao
+from Operacao.reserva import Reserva
+
 
 class Repositorio_Operacoes():
 
@@ -6,10 +9,17 @@ class Repositorio_Operacoes():
         self.operacao = []
 
     def cadastrar(self, operacao: Operacao):
-        pass
+        if self.buscar_reservas(operacao.get_cpf()) is None:
+            self.operacao.append(operacao)
+        elif self.buscar_locacoes(operacao.get_cpf()) is None:
+            self.operacao.append(operacao)
 
     def buscar_reservas(self, cpf):
-        pass
+        for operacao in self.operacao:
+            if operacao.get_cpf() == cpf and operacao.set_ativo(True):
+                    return
+            else:
+                print("Reserva não encontrada")
 
     def buscar_locacoes(self, cpf):
         pass
@@ -29,13 +39,13 @@ class Repositorio_Operacoes():
     def numero_locacoes_codigo(self, codigo):
         pass
 
-    def numero_locacoes_ativascpf(self, cpf):
+    def numero_locacoes_ativascodigo(self, cpf):
         pass
 
-    def numero_locacoes_ativascodigo(self, codigo):
+    def numero_locacoes_ativascpf(self, codigo):
         pass
 
-    def numero_reservvas(self, codigo):
+    def numero_reservas(self, codigo):
         pass
 
 

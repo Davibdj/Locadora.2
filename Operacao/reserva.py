@@ -10,5 +10,5 @@ class Reserva(Operacao):
     def get_prioridade(self):
         return self._prioridade
 
-    def set_prioridade(self, prioridade):
+    def set_prioridade(self, prioridade: int):
         self._prioridade = prioridade

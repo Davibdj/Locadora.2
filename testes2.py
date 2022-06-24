@@ -1,27 +1,33 @@
-from repositorios.repositorio_clientes import RepositorioCliente
-from Filmes.filme import Filme
 from Cliente.cliente import Cliente
+from Filmes.filme import Filme
+from repositorios.repositorio_clientes import RepositorioCliente
 from repositorios.repositorio_filmes import RepositorioFilme
 
-'''
-class Criarfilme:
+
+class Testes:
+    #Teste classe filme
+
     if __name__ == '__main__':
-        filme = Filme(658, "Call me by Your Name")
-        filme.set_genero(["Romance", "LGBT"])
-        filme.set_diretor(["André Aciman"])
-        filme.set_atores(["Timothe"])
-        filme.imprimir()
+         filme = Filme(658, "Call me by Your Name")
+         filme.set_genero(["Romance", "LGBT"])
+         filme.set_diretor(["André Aciman"])
+         filme.set_atores(["Timothe"])
+         filme.imprimir()
 
 
-class criarCliente:
+
+    #Teste classe cliente
+
     if __name__ == '__main__':
-        cliente = Cliente('06898569856')
-        cliente.set_nome(["Davi"])
-        cliente.set_endereco(["Travessa Jurandir Bastos, nº56"])
-        cliente.imprimircliente()
+         cliente = Cliente('06898569856')
+         cliente.set_nome(["Davi"])
+         cliente.set_endereco(["Travessa Jurandir Bastos, nº56"])
+         cliente.imprimircliente()
 
-'''
-class TesteRepoCliente:
+
+
+    #Teste repositorio cliente
+
     if __name__ == '__main__':
         cliente = Cliente('06898569856')
         cliente_1 = Cliente('06898569856')
@@ -46,8 +52,8 @@ class TesteRepoCliente:
         for c in repoCliente.listar():
             c.imprimircliente()
 
-'''
-class TesteRepoFilmes:
+
+    #Teste repositorio filmes
 
     if __name__ == '__main__':
         filme = Filme(658, "Call me by Your Name")
@@ -58,11 +64,3 @@ class TesteRepoFilmes:
 
         repoFilme = RepositorioFilme()
         repoFilme.cadastrar(filme)
-'''
-
-
-
-
-
-
-

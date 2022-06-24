@@ -13,24 +13,24 @@ class RepositorioCliente:
             print("Cliente já cadastrado.")
 
     def buscar(self, cpf):
-        for cliente in self.clientes:   #Percorre os elementos da lista Clientes
+        for cliente in self.clientes:    #Percorre os elementos da lista Clientes
             if cliente.get_cpf() == cpf: #Verifica se o cpf passado é igual a algum da lista clientes
-                return cliente #Retorna o cliente
+                return cliente           #Retorna o cliente
             else:
                 return None
 
     def atualizar(self, cliente: Cliente):
-        cliente = self.buscar(cliente.get_cpf())  #Procurando um cliente pelo metodo buscar(verifica o numero do cpf na lista cliente), pelo cpf e atribui a cliente
-        if cliente is not None: # Se o cliente não for nulo então:
-            cliente.set_nome(cliente.get_nome()) #Mudança de nome do cliente
+        cliente = self.buscar(cliente.get_cpf())         #Procurando um cliente pelo metodo buscar(verifica o numero do cpf na lista cliente), pelo cpf e atribui a cliente
+        if cliente is not None:                          #Se o cliente não for nulo então:
+            cliente.set_nome(cliente.get_nome())         #Mudança de nome do cliente
             cliente.set_endereco(cliente.get_endereco()) #Mudança de endereço do cliente
         else:
             print("Cliente inexistente!")
 
     def deletar(self, cpf: str):
-        for cliente in self.clientes:
-            if cliente.get_cpf() == cpf:
-                self.clientes.pop(self.clientes.index(cliente))
+        for cliente in self.clientes:                           #Percorre a lista clientes
+            if cliente.get_cpf() == cpf:                        #Verifica se o cpf passado por parametro é igual a algum da lista clientes e se for:
+                self.clientes.pop(self.clientes.index(cliente)) #Chama o metodo pop para a lista clientes e passa por parametro o indice do numero do cpf pelo cliente
                 print("Cliente deletado com sucesso!")
             else:
                 print("Cliente não encontrado!")

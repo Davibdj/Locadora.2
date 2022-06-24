@@ -13,15 +13,15 @@ class RepositorioFilme:
             print("Filme já cadastrado.")
 
     def buscar(self, codigo):
-        for filme in self.filmes:                  #
-            if filme.get_codigo() == codigo:
-                return filme
+        for filme in self.filmes:                   #Percorre a lista filmes
+            if filme.get_codigo() == codigo:        #Verifica se o codigo repassado é igual a algum da lista filmes
+                return filme                        #retorna o filme
             else:
                 return None
 
     def atualizar(self, filme):
-        filme = self.buscar(filme.get_codigo())  # Procurando um cliente pelo metodo buscar(verifica o numero do cpf na lista cliente), pelo cpf e atribui a cliente
-        if filme is not None:  # Se o cliente não for nulo então:
+        filme = self.buscar(filme.get_codigo())     #Procurando um cliente pelo metodo buscar(verifica o numero do cpf na lista cliente), pelo cpf e atribui a cliente
+        if filme is not None:                       #Se o cliente não for nulo então:
             filme.set_titulo(filme.get_titulo())
             filme.set_codigo(filme.get_codigo())
             filme.set_sinopse(filme.get_sinopse())
