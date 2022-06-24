@@ -35,11 +35,11 @@ class RepositorioFilme:
 
     def deletar(self, codigo):
             for filme in self.filmes:
-              if filme.get_codigo() == codigo:
-               self.filmes.pop(self.filmes.index(filme))
-               print("Filme deletado com sucesso!")
-              else:
-               print("Filme não encontrado!")
+               if filme.get_codigo() == codigo:
+                 self.filmes.pop(self.filmes.index(filme))
+                 print("Filme deletado com sucesso!")
+               else:
+                print("Filme não encontrado!")
 
     def listar(self, filme):
         return self.filmes

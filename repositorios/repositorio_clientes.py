@@ -1,6 +1,5 @@
 from Cliente.cliente import Cliente
 
-
 class RepositorioCliente:
 
     def __init__(self):
@@ -29,9 +28,9 @@ class RepositorioCliente:
             print("Cliente inexistente!")
 
     def deletar(self, cpf: str):
-                for cliente in self.clientes:
-            if filme.get_cpf() == cpf:
-                self.clientes.pop(self.clientes.index())
+        for cliente in self.clientes:
+            if cliente.get_cpf() == cpf:
+                self.clientes.pop(self.clientes.index(cliente))
                 print("Cliente deletado com sucesso!")
             else:
                 print("Cliente não encontrado!")
