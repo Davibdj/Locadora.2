@@ -6,20 +6,23 @@ from Operacao.reserva import Reserva
 class Repositorio_Operacoes():
 
     def __init__(self):
-        self.operacao = []
+        self.operacoes = []
 
     def cadastrar(self, operacao: Operacao):
         if self.buscar_reservas(operacao.get_cpf()) is None:
-            self.operacao.append(operacao)
+            self.operacoes.append(operacao)
         elif self.buscar_locacoes(operacao.get_cpf()) is None:
-            self.operacao.append(operacao)
+            self.operacoes.append(operacao)
 
     def buscar_reservas(self, cpf):
-        for operacao in self.operacao:
-            if operacao.get_cpf() == cpf and operacao.set_ativo(True):
-                    return
-            else:
-                print("Reserva não encontrada")
+       reservas = []
+        for ope in self.operacoes:
+            if ope.get_cpf() == cpf:
+               if ope.Is_Ativo() == True:
+                   if
+
+
+
 
     def buscar_locacoes(self, cpf):
         pass
@@ -48,5 +51,18 @@ class Repositorio_Operacoes():
     def numero_reservas(self, codigo):
         pass
 
+
+
+'''
+ reservas = []
+        for operacao in self.operacao:
+           if operacao.get_cpf() == cpf:
+             if operacao.Is_Ativo() == True:
+               if isinstance(operacao, Reserva):
+                 return reservas
+           else:
+                print("Reserva não encontrada!")
+
+'''
 
 
