@@ -34,9 +34,9 @@ class RepositorioFilme:
             print("Filme inexistente!")
 
     def deletar(self, codigo):
-            for filme in self.filmes:
-               if filme.get_codigo() == codigo:
-                 self.filmes.pop(self.filmes.index(filme))
+            for filme in self.filmes:                       #Percorre a lista filmes
+               if filme.get_codigo() == codigo:             #Se o codigo do filme for igual ao codigo passado por parametro então:
+                 self.filmes.pop(self.filmes.index(filme))  #Chama o metodo pop para a lista filmes e passa por parametro o indice do numero do codigo do filme
                  print("Filme deletado com sucesso!")
                else:
                 print("Filme não encontrado!")

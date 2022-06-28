@@ -14,15 +14,11 @@ class Repositorio_Operacoes():
         elif self.buscar_locacoes(operacao.get_cpf()) is None:
             self.operacoes.append(operacao)
 
+        else:
+            print("Reserva| Locação Encontradas")
+
     def buscar_reservas(self, cpf):
-       reservas = []
-        for ope in self.operacoes:
-            if ope.get_cpf() == cpf:
-               if ope.Is_Ativo() == True:
-                   if
-
-
-
+        pass
 
     def buscar_locacoes(self, cpf):
         pass
