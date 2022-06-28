@@ -1,9 +1,9 @@
-from Operacao import operacao
+from Cliente import cliente
 from Operacao.operacao import Operacao
 from Operacao.reserva import Reserva
 
 
-class Repositorio_Operacoes():
+class RepositorioOperacoes:
 
     def __init__(self):
         self.operacoes = []
@@ -18,10 +18,26 @@ class Repositorio_Operacoes():
             print("Reserva| Locação Encontradas")
 
     def buscar_reservas(self, cpf):
-        pass
+         reservas = []
+         for ope in self.operacoes:
+             if ope.get_cpf() == cpf:
+                 if ope.Is_Ativo() == True:
+                     if isinstance(ope, Reserva):
+                         reservas.append(ope)
+             else:
+                 print("Reserva não encontrada!")
+         return reservas
 
     def buscar_locacoes(self, cpf):
-        pass
+        locacoes = []
+        for loc in self.operacoes:
+            if loc.get_cpf() == cpf:
+                if loc.Is_Ativo() == True:
+                    if isinstance(loc, Reserva):
+                        locacoes.append(loc)
+            else:
+                print("Locação não encontrada!")
+        return locacoes
 
     def deletar_reserva(self, cpf, codigo):
         pass
@@ -30,7 +46,12 @@ class Repositorio_Operacoes():
         pass
 
     def listar_locacoes(self, cpf):
-        pass
+
+        for res in self.operacoes:
+            if res.get_cpf() == cpf:
+                return self.operacoes
+            else:
+                return None
 
     def numero_locacoes_cpf(self, cpf):
         pass
@@ -38,10 +59,15 @@ class Repositorio_Operacoes():
     def numero_locacoes_codigo(self, codigo):
         pass
 
-    def numero_locacoes_ativascodigo(self, cpf):
-        pass
+    def numero_locacoes_ativas_cpf(self, cpf):
+        o = 0
 
-    def numero_locacoes_ativascpf(self, codigo):
+        for i in self.operacoes:
+          if self.buscar_locacoes(Operacao.get_cpf()) == cpf:
+              pass
+
+
+    def numero_locacoes_ativas_codigo(self, codigo):
         pass
 
     def numero_reservas(self, codigo):
