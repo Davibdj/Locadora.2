@@ -2,15 +2,15 @@ from Cliente.cliente import Cliente
 from Filmes.filme import Filme
 from repositorios.repositorio_clientes import RepositorioCliente
 from repositorios.repositorio_filmes import RepositorioFilme
-from repositorios.repositorio_operacoes import RepositorioOperacoes
+from repositorios.repositorio_operacoes import RepositorioOperacao
 
 
 class Locadora:
 
-    def __init__(self, clientes: RepositorioCliente, filmes: RepositorioFilme, operacoes: RepositorioOperacoes):
+    def __init__(self, clientes: RepositorioCliente, filmes: RepositorioFilme, operacoes: RepositorioOperacao):
         self._filmes = RepositorioFilme
         self._clientes = RepositorioCliente
-        self._operacoes = RepositorioOperacoes
+        self._operacoes = RepositorioOperacao
 
     def cadastrar(self, cliente: Cliente):
         pass

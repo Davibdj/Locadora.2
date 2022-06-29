@@ -1,19 +1,20 @@
 from Operacao import operacao
+from Operacao.locacao import Locacao
 from Operacao.operacao import Operacao
 from Operacao.reserva import Reserva
 
 
-class RepositorioOperacoes:
+class RepositorioOperacao:
 
     def __init__(self):
         self.operacoes = []  # Inicializa uma lista para operações
 
     def cadastrar(self, operacao: Operacao):
         for oper in self.operacoes:
-            if self.buscar_reservas(operacao.get_cpf()) is None:
+            if self.buscar_reservas(oper.get_cpf()) is None:
                 self.operacoes.append(oper)
                 operacao.set_ativo(True)
-            elif self.buscar_locacoes(operacao.get_cpf()) is None:
+            elif self.buscar_locacoes(oper.get_cpf()) is None:
                 self.operacoes.append(oper)
                 operacao.set_ativo(True)
         else:
@@ -23,39 +24,40 @@ class RepositorioOperacoes:
         reservas = []
         for ope in self.operacoes:
             if ope.get_cpf() == cpf:
-                if ope.Is_Ativo(True):
+                if ope.is_Ativo() is True:
                     if isinstance(ope, Reserva):
                         reservas.append(ope)
-            else:
-                print("Reserva não encontrada!")
         return reservas
 
     def buscar_locacoes(self, cpf):
         locacoes = []
         for loc in self.operacoes:
             if loc.get_cpf() == cpf:
-                if loc.Is_Ativo(True):
+                if loc.is_Ativo() is True:
                     if isinstance(loc, Reserva):
                         locacoes.append(loc)
-            else:
-                print("Locação não encontrada!")
         return locacoes
 
     def deletar_reserva(self, cpf, codigo):
         for res in self.operacoes:
-            if operacao.get_cpf() == cpf and operacao.get_cpf():
-                pass
+            if res.get_cpf() == cpf and res.get_codigo() == codigo and isinstance(res, Reserva):
+                res.set_ativo(False)
 
     def deletar_locacao(self, cpf, codigo):
-        pass
+        for loc in self.operacoes:
+            if loc.get_cpf() == cpf:
+                if loc.get_codigo() == codigo:
+                    if isinstance(loc, Locacao):
+                      loc.set_ativo(False)
+
 
     def listar_locacoes(self, cpf):
-
-        for res in self.operacoes:
-            if res.get_cpf() == cpf:
-                return self.operacoes
-            else:
-                return None
+        listoper = []
+        for loc in self.operacoes:
+            if loc.get_cpf() == cpf:
+                if isinstance(loc, Operacao):
+                    listoper.append(loc)
+        return listoper
 
     def numero_locacoes_cpf(self, cpf):
         pass
@@ -64,10 +66,7 @@ class RepositorioOperacoes:
         pass
 
     def numero_locacoes_ativas_cpf(self, cpf):
-        o = 0
-        for i in self.operacoes:
-            if self.buscar_locacoes(Operacao.get_cpf()) == cpf:
-                pass
+        pass
 
     def numero_locacoes_ativas_codigo(self, codigo):
         pass
@@ -85,5 +84,8 @@ class RepositorioOperacoes:
                  return reservas
            else:
                 print("Reserva não encontrada!")
+                
+            
+
 
 '''

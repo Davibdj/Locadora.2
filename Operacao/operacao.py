@@ -30,5 +30,5 @@ class Operacao:
     def set_ativo(self, ativo: bool):
         self._ativo = ativo
 
-    def Is_Ativo(self):
+    def is_Ativo(self):
         return self._ativo

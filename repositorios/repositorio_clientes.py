@@ -21,8 +21,7 @@ class RepositorioCliente:
                 return None
 
     def atualizar(self, cliente: Cliente):
-        cliente = self.buscar(
-            cliente.get_cpf())  # Procurando um cliente pelo metodo buscar(verifica o numero do cpf na lista cliente), pelo cpf e atribui a cliente
+        cliente = self.buscar(cliente.get_cpf())  # Procurando um cliente pelo metodo buscar(verifica o numero do cpf na lista cliente), pelo cpf e atribui a cliente
         if cliente is not None:  # Se o cliente não for nulo então:
             cliente.set_nome(cliente.get_nome())  # Mudança de nome do cliente
             cliente.set_endereco(cliente.get_endereco())  # Mudança de endereço do cliente
