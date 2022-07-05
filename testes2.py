@@ -91,4 +91,4 @@ class Testes:
         operacao.set_ativo(True)
 
         repoOper = RepositorioOperacao
-        repoOper.cadastrar('06898569856',865)
+        repoOper.cadastrar()

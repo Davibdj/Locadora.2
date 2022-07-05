@@ -1,4 +1,3 @@
-from Operacao import operacao
 from Operacao.locacao import Locacao
 from Operacao.operacao import Operacao
 from Operacao.reserva import Reserva
@@ -48,8 +47,7 @@ class RepositorioOperacao:
             if loc.get_cpf() == cpf:
                 if loc.get_codigo() == codigo:
                     if isinstance(loc, Locacao):
-                      loc.set_ativo(False)
-
+                        loc.set_ativo(False)
 
     def listar_locacoes(self, cpf):
         listoper = []
@@ -60,19 +58,42 @@ class RepositorioOperacao:
         return listoper
 
     def numero_locacoes_cpf(self, cpf):
-        pass
+        for ope in self.operacoes:
+            if ope.get_cpf() == cpf:
+                return len(self.operacoes)
+        else:
+            print("Cliente nâo encontrado")
 
     def numero_locacoes_codigo(self, codigo):
-        pass
+        for ope in self.operacoes:
+            if ope.get_codigo() == codigo:
+                return len(self.operacoes)
+        else:
+            print("Filme nâo encontrado")
 
     def numero_locacoes_ativas_cpf(self, cpf):
-        pass
+        for ope in self.operacoes:
+            if ope.locacao.set_ativo() is True:
+                if ope.get_cpf == cpf:
+                    return len(ope.locacao.set_ativo() is True)
+        else:
+            print("Cliente não encontrado!")
 
     def numero_locacoes_ativas_codigo(self, codigo):
-        pass
+        for ope in self.operacoes:
+            if ope.locacao.set_ativo() is True:
+                if ope.get_codigo == codigo:
+                    return len(ope.locacao.set_ativo() is True)
+        else:
+            print("Filme não encontrado!")
 
     def numero_reservas(self, codigo):
-        pass
+        for ope in self.operacoes:
+            if ope.get_codigo() == codigo:
+                if ope.is_Ativo() is True:
+                    return len(self.operacoes)
+        else:
+            print("Filme nâo encontrado")
 
 
 '''

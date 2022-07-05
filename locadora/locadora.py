@@ -8,32 +8,45 @@ from repositorios.repositorio_operacoes import RepositorioOperacao
 class Locadora:
 
     def __init__(self, clientes: RepositorioCliente, filmes: RepositorioFilme, operacoes: RepositorioOperacao):
-        self._filmes = RepositorioFilme
-        self._clientes = RepositorioCliente
-        self._operacoes = RepositorioOperacao
+        self._filmes = filmes
+        self._clientes = clientes
+        self._operacoes = operacoes
 
     def cadastrar(self, cliente: Cliente):
-        pass
+        self._clientes.cadastrar(cliente)
 
     def buscarcliente(self, cpf: str):
-        pass
+        self._clientes.buscar(cpf)
 
     def atualizarCadastro(self, cliente: Cliente):
-        pass
+        self._clientes.atualizar(cliente)
 
     def removerCliente(self, cpf: str):
-        pass
+        self._clientes.deletar(cpf)
 
     def cadastrarFilme(self, filme: Filme):
-        pass
+        self._filmes.cadastrar(filme)
 
     def atualizarCadastroFilme(self, filme: Filme):
-        pass
+        self._filmes.atualizar(filme)
 
     def removerFilme(self, codigo: int):
-        pass
+        self._filmes.deletar(codigo)
 
     def reservarFilme(self, cpf: str, codigo: int):
         pass
 
     def finalizarReservaFilme(self, cpf):
+        pass
+
+    def LocarFilme(self, cpf: str, codigo: int):
+        pass
+
+    def DevolverFilme(self, cpf: str, codigo: int):
+        pass
+
+    def ImprimirHistoricoLocacoes(self, cpf: str):
+        pass
+
+    def ImprimirFilmesMaisLocados(self, top: int):
+        pass
